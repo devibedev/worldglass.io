@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorldGlass - Cotiza canceles y ventanas con IA en 10 segundos</title>
+    <meta name="description" content="Deja de perder obras por cotizar lento. WorldGlass calcula precios y genera renders con IA directo desde WhatsApp. Para talleres de aluminio y vidrio.">
+    
+    <!-- Tailwind via CDN - sin build -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); }
+        .glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header -->
+    <header class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-window-maximize text-2xl text-blue-700"></i>
+                <span class="text-xl font-bold text-slate-900">WorldGlass</span>
+            </div>
+            <nav class="hidden md:flex gap-6 items-center">
+                <a href="#como-funciona" class="hover:text-blue-700">Cómo funciona</a>
+                <a href="#precios" class="hover:text-blue-700">Precios</a>
+                <a href="/demo" class="hover:text-blue-700">Ver Demo</a>
+                <a href="/login" class="bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-800">Entrar</a>
+            </nav>
+            <a href="/demo" class="md:hidden bg-blue-700 text-white px-4 py-2 rounded-lg">Demo</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="gradient-bg pt-32 pb-20 text-white">
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+                    Deja de perder obras por <span class="text-blue-300">cotizar lento</span>
+                </h1>
+                <p class="text-lg text-slate-300 mb-8">
+                    WorldGlass es el chatbot con IA que cotiza canceles, ventanas y barandales en 10 segundos. 
+                    Con render del trabajo terminado para que cierres más ventas.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="/demo" class="bg-white text-blue-700 px-8 py-4 rounded-lg font-bold text-center hover:bg-slate-100">
+                        Probar Gratis <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#video" class="glass px-8 py-4 rounded-lg font-bold text-center hover:bg-white/20">
+                        Ver cómo funciona <i class="fa-solid fa-play ml-2"></i>
+                    </a>
+                </div>
+                <p class="text-sm text-slate-400 mt-4">
+                    <i class="fa-solid fa-check text-green-400"></i> Sin tarjeta de crédito &nbsp;&nbsp;
+                    <i class="fa-solid fa-check text-green-400"></i> 10 cotizaciones gratis
+                </p>
+            </div>
+            <div class="relative">
+                <div class="bg-white p-2 rounded-2xl shadow-2xl">
+                    <img src="https://i.imgur.com/8QfZ9kL.png" alt="WorldGlass Chat Demo" class="rounded-xl w-full">
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg">
+                    <i class="fa-solid fa-bolt"></i> Cotizado en 8 segundos
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problema -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">¿Te suena familiar?</h2>
+            <p class="text-slate-600 text-lg mb-12">El 87% de los talleres de aluminio pierde clientes por esto:</p>
+            <div class="grid md:grid-cols-3 gap-8 text-left">
+                <div class="p-6 border border-slate-200 rounded-xl">
+                    <i class="fa-solid fa-clock text-3xl text-red-500 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Tardas 2 días en cotizar</h3>
+                    <p class="text-slate-600">Mientras tú haces números en Excel, tu competencia ya mandó PDF con foto.</p>
+                </div>
+                <div class="p-6 border border-slate-200 rounded-xl">
+                    <i class="fa-solid fa-user-slash text-3xl text-red-500 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Dependes de 1 persona</h3>
+                    <p class="text-slate-600">Si Don Chuy no está, no salen cotizaciones. Tu negocio se frena.</p>
+                </div>
+                <div class="p-6 border border-slate-200 rounded-xl">
+                    <i class="fa-solid fa-face-frown text-3xl text-red-500 mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">El cliente no visualiza</h3>
+                    <p class="text-slate-600">Le das un número. Él quiere ver cómo quedará su baño. Sin foto, no compra.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cómo funciona -->
+    <section id="como-funciona" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Cotiza y cierra en 3 pasos</h2>
+                <p class="text-slate-600 text-lg">Sin apps. Sin capacitaciones. Solo WhatsApp.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-blue-700 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+                    <h3 class="font-bold text-xl mb-2">Tu técnico va a la obra</h3>
+                    <p class="text-slate-600">Abre WorldGlass en su cel. Escribe: "cancel baño 150x190 negro". Sube foto del vano.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-blue-700 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+                    <h3 class="font-bold text-xl mb-2">IA calcula y renderiza</h3>
+                    <p class="text-slate-600">En 10 segundos tienes: desglose de materiales, precio exacto y foto del cancel ya instalado.</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-blue-700 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+                    <h3 class="font-bold text-xl mb-2">Mandas PDF y cierras</h3>
+                    <p class="text-slate-600">Cliente recibe PDF pro con render + total. Tasa de cierre sube de 15% a 60%.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Demo -->
+    <section id="video" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8">Mira WorldGlass en acción: 30 segundos</h2>
+            <div class="aspect-video bg-slate-900 rounded-2xl shadow-2xl flex items-center justify-center">
+                <div class="text-white">
+                    <i class="fa-solid fa-play-circle text-6xl mb-4 opacity-50"></i>
+                    <p>Aquí va tu video de YouTube/Vimeo</p>
+                    <p class="text-sm text-slate-400">Graba tu pantalla cotizando y súbelo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Precios -->
+    <section id="precios" class="py-20 bg-slate-50">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Un precio simple. Sin letras chiquitas.</h2>
+                <p class="text-slate-600 text-lg">Si cierras 1 obra extra al mes, WorldGlass ya se pagó 8 veces.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                <!-- Plan Gratis -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">Gratis</h3>
+                    <p class="text-slate-600 mb-6">Para que lo cales sin riesgo</p>
+                    <div class="text-4xl font-extrabold mb-6">$0<span class="text-lg text-slate-500">/mes</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li><i class="fa-solid fa-check text-green-500"></i> 10 cotizaciones/mes</li>
+                        <li><i class="fa-solid fa-check text-green-500"></i> Chatbot con IA</li>
+                        <li><i class="fa-solid fa-check text-green-500"></i> 1 usuario</li>
+                        <li><i class="fa-solid fa-xmark text-slate-400"></i> Sin PDF personalizado</li>
+                        <li><i class="fa-solid fa-xmark text-slate-400"></i> Sin renders IA</li>
+                    </ul>
+                    <a href="/demo" class="block w-full text-center bg-slate-200 text-slate-800 py-3 rounded-lg font-bold hover:bg-slate-300">Empezar gratis</a>
+                </div>
+                <!-- Plan Pro -->
+                <div class="bg-blue-700 text-white p-8 rounded-2xl shadow-2xl relative">
+                    <div class="absolute -top-3 right-6 bg-yellow-400 text-slate-900 px-3 py-1 rounded-full text-sm font-bold">Más popular</div>
+                    <h3 class="text-xl font-bold mb-2">Pro</h3>
+                    <p class="text-blue-200 mb-6">Para talleres que quieren crecer</p>
+                    <div class="text-4xl font-extrabold mb-6">$990<span class="text-lg text-blue-200">/mes</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li><i class="fa-solid fa-check text-green-300"></i> Cotizaciones ilimitadas</li>
+                        <li><i class="fa-solid fa-check text-green-300"></i> Renders con IA ilimitados</li>
+                        <li><i class="fa-solid fa-check text-green-300"></i> PDF con tu logo</li>
+                        <li><i class="fa-solid fa-check text-green-300"></i> 5 usuarios/técnicos</li>
+                        <li><i class="fa-solid fa-check text-green-300"></i> Soporte por WhatsApp</li>
+                    </ul>
+                    <a href="/checkout" class="block w-full text-center bg-white text-blue-700 py-3 rounded-lg font-bold hover:bg-slate-100">Contratar Pro</a>
+                </div>
+            </div>
+            <p class="text-center text-slate-500 mt-8">¿Tienes +10 empleados? <a href="#" class="text-blue-700 underline">Plan Enterprise</a></p>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="gradient-bg py-20 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-6">
+                Deja de competir por precio. <br>Empieza a ganar por velocidad.
+            </h2>
+            <p class="text-lg text-slate-300 mb-8">
+                Únete a los primeros 50 talleres fundadores. Precio de $990 MXN congelado de por vida.
+            </p>
+            <a href="/demo" class="bg-white text-blue-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-100">
+                Probar WorldGlass Gratis <i class="fa-solid fa-arrow-right ml-2"></i>
+            </a>
+            <p class="text-sm text-slate-400 mt-4">No necesitas tarjeta. Cancela cuando quieras.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-window-maximize text-2xl text-blue-500"></i>
+                    <span class="text-xl font-bold text-white">WorldGlass</span>
+                </div>
+                <p class="text-sm">© 2026 WorldGlass. Hecho en Guadalajara para talleres de México.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white">Términos</a>
+                    <a href="#" class="hover:text-white">Privacidad</a>
+                    <a href="mailto:hola@worldglass.app" class="hover:text-white">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
